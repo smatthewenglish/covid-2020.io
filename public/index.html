@@ -26,21 +26,6 @@
   </head>
   <body>
 
-<!--     <div id="hero">
-    </div>
-
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  
-
-    <script src="//cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script>
-        particlesJS.load('hero', './particles.json', function () {
-            console.log('callback - particles.js config loaded');
-        });
-    </script> -->
-
-
 
   <div class="box">
 
@@ -54,7 +39,8 @@
     
     <div class="row content"><!-- 0:CONTENT -->
 
-<!--       <div id="root"></div> -->
+
+     <!--  <div id="root"></div> -->
 
 
 <div id="mapContainer"></div>
@@ -63,13 +49,6 @@
 
 
 <div id="tooltip-container"></div>
-
-
-
-
-
-
-
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
@@ -175,7 +154,8 @@ d3.csv("population.csv", function(err, data) {
       // .attr("width", width)
       // .attr("height", height);
       .attr("preserveAspectRatio", "xMinYMin meet")
-      .attr("viewBox", "0 0 960 500")
+      .attr("viewBox", "0 0 655 355")
+
   
   d3.tsv("https://s3-us-west-2.amazonaws.com/vida-public/geo/us-state-names.tsv", function(error, names) {
   
@@ -266,47 +246,36 @@ d3.csv("population.csv", function(err, data) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     
     </div><!-- 1:CONTENT -->
 
     <div class="row footer"><!-- 0:FOOTER -->
 
       <div class="footer-social-icons">
-        <a href="https://www.meetup.com/members/216718973/" class="social-icon"> <i class="fa fa-meetup"></i></a>
-        <a href="https://t.me/smatthewenglish" class="social-icon"> <i class="fa fa-telegram"></i></a>
-        <a href="https://stackoverflow.com/users/3787253/smatthewenglish" class="social-icon"> <i class="fa fa-stack-overflow"></i></a>
-        <a href="https://apps.apple.com/us/developer/s-matthew-english/id1458676174" class="social-icon"> <i class="fa fa-apple"></i></a> 
-        <a href="mailto:matthew@tschess.io" class="social-icon"> <i class="fa fa-envelope"></i></a>   
-        <a href="https://scholar.google.de/citations?user=Wnka3RQAAAAJ&hl=en" class="social-icon"><i class="ai ai-google-scholar-square"></i></a>
-        <a href="https://github.com/smatthewenglish" class="social-icon"> <i class="fa fa-github"></i></a>    
-        <a href="https://open.spotify.com/user/smatthewenglish" class="social-icon"> <i class="fa fa-spotify"></i></a>
-        <a href="https://www.reddit.com/user/s-matthew-english" class="social-icon"> <i class="fa fa-reddit"></i></a>
-        <a href="https://instagram.com/smatthewenglish" class="social-icon"> <i class="fa fa-instagram"></i></a>    
-        <a href="https://twitter.com/smatthewenglish" class="social-icon"> <i class="fa fa-twitter"></i></a>
-        <a href="https://medium.com/@s.matthew.english" class="social-icon"> <i class="fa fa-medium"></i></a>
-        <a href="https://soundcloud.com/laviusalens" class="social-icon"> <i class="fa fa-soundcloud"></i></a>
-        <a href="https://www.youtube.com/channel/UCwvrxkqadxUUAIlsH5zqg3A" class="social-icon"> <i class="fa fa-youtube"></i></a>
+        <a href="https://www.meetup.com/members/216718973/" class="social-icon"><img class="cdc" src="./who.png"/></a>
+        <a href="https://t.me/smatthewenglish" class="social-icon"><img class="cdc" src="./cdc.png"/></a>
+        <a href="https://t.me/smatthewenglish" class="social-icon"><img class="cdc" src="./white.png"/></a>
       </div>
 
     </div><!-- 1:FOOTER -->
     
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
   </div>
 
 <script src="//cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js">
@@ -341,18 +310,6 @@ particlesJS.load('hero', './particles.json', function () {
   fill: none;
   stroke: #fff;
   stroke-linejoin: round;
-}
-
-
-
-#canvas-svg {
-
-/*  border: 1px dashed green;*/
-
-/*  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;*/
 }
 
 #tooltip-container {

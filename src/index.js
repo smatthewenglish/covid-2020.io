@@ -81,24 +81,7 @@ const history = createBrowserHistory()
 
   render(
     <div>
-      <Grid container spacing={24}>
-        
-        <Grid item md={3}>
-          <App name="personal introduction" subject="whoami" desc={<Bio />} sub="autobiography" history={history}/>
-        </Grid>
 
-        <Grid item md={3}>
-          <App name="tschess • the american football of chess" subject="craftsmanship" desc={<Tsc />} sub="masterpiece pro tempore" history={history}/>
-        </Grid>
-
-        <Grid item md={3}>
-          <App name="formal education" subject="credentials" desc={<Edu />} sub="institutional" history={history}/>
-        </Grid>
-       
-
-
-
-      </Grid>
     </div>,
     rootElement
   );

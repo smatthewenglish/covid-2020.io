@@ -54,21 +54,37 @@ width: 100%;
 /*overflow: hidden;*/
 }
 
-/*.states-choropleth {*/
-/*  border: 1px dashed green;*/
+.states-choropleth {
+/*  
 /*  fill: #ccc;*/
 /* align-self: center;*/
-/*}*/
+
+/* flex: 1;*/
+
+/*display: inline-block;
+position: absolute;
+top: 0;
+left: 0;*/
+
+}
 
 #mapContainer {
-/*  height: fit-content;
-  background: blue;*/
-/*  width: 100%;
-  height:auto;*/
-/*  display: flex;
-  flex-direction: column;
+border: 5px dashed green;
+
+/*  display: flex; 
   align-items: center;
   justify-content: center;*/
+
+/*    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    vertical-align: top;
+    overflow: hidden;*/
+
+
+
+
 }
 
 .box .row.content {
@@ -79,6 +95,8 @@ width: 100%;
 
     overflow: scroll;
     background: white;
+
+    
 }
 
 /*#salad {
@@ -98,6 +116,9 @@ width: 100%;
     background: black;
 
     height: fit-content;
+
+    padding-top: 3px;
+     padding-bottom: 4px;
 
     display: flex;
     flex-direction: row;
@@ -183,16 +204,18 @@ width: 100%;
    /* width: fit-content;*/
 
     color: #fff;
-    margin-left: 2.5px;
-    margin-right: 2.5px;
+    margin: 2.5px;
+   /* margin-right: 2.5px;*/
 }
 .social-icons a {
 
     color: #fff;
     text-decoration: none;
 }
-.fa-instagram {
-    padding:10px 14px;
+.cdc {
+  height: 50px;
+/*  width: 35px;*/
+    padding:5px;
     background-color: #322f30;
     border-radius: 4px;
 }
