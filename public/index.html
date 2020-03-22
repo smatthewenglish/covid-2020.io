@@ -56,9 +56,9 @@
 
     </div><!-- 1:HEADER --> 
     
-    <div class="row content"><!-- 0:CONTENT -->
+    <div class="row content" id="content"><!-- 0:CONTENT -->
 
-      <div id="map_container"></div>
+     
       <div id="tooltip-container"></div>
 
     </div><!-- 1:CONTENT -->
@@ -189,18 +189,13 @@ d3.csv("./data/csbs.csv", function(err, data) {
   var path = d3.geo.path();
   
   //!!!!
-  var svg = d3.select("#map_container").append("svg")
-      // .attr("width", width)
-      // .attr("height", height);
-      .attr("preserveAspectRatio", "xMinYMin meet")
-      .attr("viewBox", "0 0 655 355")
+  var svg = d3.select("#content").append("svg")
+      .attr("width", 900)
+      .attr("height", 535)
+      .attr("preserveAspectRatio", "xMinYMin meet");
 
   
-  d3.tsv("https://s3-us-west-2.amazonaws.com/vida-public/geo/us-state-names.tsv", function(error, names) {
-  
-
-
-
+  d3.tsv("//s3-us-west-2.amazonaws.com/vida-public/geo/us-state-names.tsv").get(function(error, names) {
   name_id_map = {};
   id_name_map = {};
   
@@ -208,7 +203,6 @@ d3.csv("./data/csbs.csv", function(err, data) {
     name_id_map[names[i].name] = names[i].id;
     id_name_map[names[i].id] = names[i].name;
   }
-  
   data.forEach(function(d) {
     var id = name_id_map[d[MAP_STATE]];
     
@@ -216,20 +210,17 @@ d3.csv("./data/csbs.csv", function(err, data) {
     deathsById.set(id, + d[MAP_DEATHS]);
     recoveredById.set(id, + d[MAP_RECOVERED]);
   });
-  
   quantize.domain(
     [
       d3.min(data, function(d){ return +d[MAP_CONFIRMED] }), 
       d3.max(data, function(d){ return +d[MAP_CONFIRMED] })
     ]);
-  
   d3.json("https://s3-us-west-2.amazonaws.com/vida-public/geo/us.json", function(error, us) {
     svg.append("g")
-        .attr("class", "states-choropleth")
+        .attr("class", "choropleth")
       .selectAll("path")
         .data(topojson.feature(us, us.objects.states).features)
       .enter().append("path")
-        .attr("transform", "scale(" + SCALE + ")")
         .style("fill", function(d) {
           
           if (confirmedById.get(d.id)) {
@@ -311,11 +302,13 @@ d3.csv("./data/csbs.csv", function(err, data) {
     svg.append("path")
         .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
         .attr("class", "states")
-        .attr("transform", "scale(" + SCALE + ")")
         .attr("d", path);
+       
   });
-  
   });
+
+  $("svg").css({top: '25%', left: '25%', position:'absolute', border: '5px dotted magenta'});
+
 });
 </script>
 

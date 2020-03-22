@@ -39,9 +39,15 @@ html, body {
   float: right;
 }
 
-.states-choropleth {}
+/*.svg {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+}*/
 
-#map_container {}
+/*#map_container {
+border: 5px dotted magenta;
+}*/
 
 .box {
   display: flex;
