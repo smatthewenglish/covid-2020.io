@@ -10,9 +10,9 @@ html, body {
 }
 
 #particles_background {
-    height: 100%;
-    width: 100%;
-    background-color: #322f30;
+  height: 100%;
+  width: 100%;
+  background-color: #322f30;
 }
 
 .states {
@@ -97,10 +97,9 @@ html, body {
 }
 
 .title {
-  /*border: 1px solid red;*/
+  /* border: 1px solid yellow;*/
   margin-top: 25px;
 	position: fixed;
-  max-width: 100%;
 }
 
 .footer_member {
@@ -134,7 +133,25 @@ html, body {
 
 @media only screen and (max-width: 768px) { 
   .title {
-    width:100%;
+    /*border: 1px solid yellow;*/
+    max-height: 12%;
+    top: 0px;
+  }
+
+  .footer_box {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 2px;
+    margin-left: 2px;
+  }
+
+  .footer_member {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .box .row.footer {
+    padding-bottom: 0px;
   }
 }
 
