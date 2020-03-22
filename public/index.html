@@ -232,13 +232,44 @@ d3.csv("./data/population.csv", function(err, data) {
   
             html += "<div class=\"tooltip_kv\">";
             html += "<span class=\"tooltip_key\">";
-            html += id_name_map[d.id];
+            html += id_name_map[d.id] + "&nbsp;&nbsp;&nbsp;&nbsp;";
             html += "</span>";
-            html += "<span class=\"tooltip_value\">";
-            html += (valueById.get(d.id) ? valueFormat(valueById.get(d.id)) : "");
+
+              html += "<span class=\"date\">";
+              html += "03.21"
+              html += "</span>";
             
-            // html += "infected";
+            html += "<hr/>";
+
+            html += "<span class=\"infected\">";
+            html += "infected:";
+
+              html += "<span class=\"tooltip_value\">";
+              html += (valueById.get(d.id) ? valueFormat(valueById.get(d.id)) : "");
+              html += "</span>";
+
             html += "</span>";
+            html += "</br>";
+            
+            html += "<span class=\"deceased\">";
+            html += "deceased:";
+
+              html += "<span class=\"tooltip_value\">";
+              html += (valueById.get(d.id) ? valueFormat(valueById.get(d.id)) : "");
+              html += "</span>";
+
+            html += "</span>";
+            html += "</br>";
+
+            html += "<span class=\"recovered\">";
+            html += "recovered:";
+
+              html += "<span class=\"tooltip_value\">";
+              html += (valueById.get(d.id) ? valueFormat(valueById.get(d.id)) : "");
+              html += "</span>";
+
+            html += "</span>";
+
             html += "</div>";
             
             $("#tooltip-container").html(html);
