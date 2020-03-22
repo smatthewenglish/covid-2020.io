@@ -1,4 +1,13 @@
-## COVID-2020
+# COVID-2020
+
+| ![COVID-2020](https://www.covid-2020.io/yes.jpeg "COVID-2020") |
+| :--: | 
+
+### »if you're worried ~ if you're not worried«
+
+---
+
+### React
 
 In the project directory, you can run:
 
@@ -15,5 +24,9 @@ The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
 
+
+### Misc. 
+
+To open the preview in SublimeText `ctrl+shift+p` --> `MarkdownLivePreview: Open Preview`.
 
 
