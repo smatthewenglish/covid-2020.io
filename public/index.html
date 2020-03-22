@@ -231,14 +231,20 @@ d3.csv("./data/population.csv", function(err, data) {
             var html = "";
   
             html += "<div class=\"tooltip_kv\">";
-            html += "<span class=\"tooltip_key\">";
-            html += id_name_map[d.id] + "&nbsp;&nbsp;&nbsp;&nbsp;";
-            html += "</span>";
 
-              html += "<span class=\"date\">";
-              html += "03.21"
-              html += "</span>";
-            
+
+            html += "<div class=\"tip_header\">"; 
+
+              html += "<p class=\"tooltip_key\">"; //style= {float: left; width:50%; text-align:left;} 
+              html += id_name_map[d.id];
+              html += "</p>";
+
+              html += "<p >"; //style= {float: right; width:50%; text-align:right;}
+              html += "&nbsp;&nbsp;&nbsp;&nbsp;03.21"
+              html += "</p>";
+
+            html += "</div>"; 
+
             html += "<hr/>";
 
             html += "<span class=\"infected\">";
