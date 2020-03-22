@@ -98,12 +98,7 @@ d3.csv("./data/csbs.csv", function(err, data) {
   var COLOR_COUNTS = 254;  
   var SCALE = 0.7;
   
-  function Interpolate(start, end, steps, count) {
-    var s = start;
-    var e = end;
-    var final = s + (((e - s) / steps) * count);
-    return Math.floor(final);
-  }
+  
   
   function Color(_r, _g, _b) {
       var r, g, b;
@@ -179,6 +174,13 @@ d3.csv("./data/csbs.csv", function(err, data) {
     var b = Interpolate(startColors.b, endColors.b, COLOR_COUNTS, i);
     colors.push(new Color(r, g, b));
   }
+
+  function Interpolate(start, end, steps, count) {
+    var s = start;
+    var e = end;
+    var final = s + (((e - s) / steps) * count);
+    return Math.floor(final);
+  }
   
   var quantize = d3.scale.quantize()
       .domain([0, 1.0])
@@ -245,18 +247,11 @@ d3.csv("./data/csbs.csv", function(err, data) {
 
             var html = "";
             html += "<div class=\"tooltip_kv\">";
-            html += "<div class=\"tip_header\">"; 
 
-              html += "<p class=\"tooltip_key\">";
+              html += "<h3 class=\"tooltip_key\">";
               html += id_name_map[d.id];
-              html += "</p>";
+              html += "</h3>";
 
-              html += "<p >"; //style= {float: right; width:50%; text-align:right;}
-              html += "&nbsp;&nbsp;&nbsp;&nbsp;03.22"
-              html += "</p>";
-
-            html += "</div>"; 
-            html += "<hr/>";
 
             html += "<span class=\"confirmed\">";
             html += "confirmed:";
