@@ -5,9 +5,11 @@
 
 ### »if you're worried ~ if you're not worried«
 
+timely and accurate infographic
+
 ---
 
-### React
+### Usage
 
 In the project directory, you can run:
 
