@@ -39,4 +39,6 @@ curl --header "Content-Type: application/json" --request GET --data '' https://c
 
 To open the preview in SublimeText `ctrl+shift+p` --> `MarkdownLivePreview: Open Preview`.
 
+### Data
 
+Aggregated with this: https://github.com/smatthewenglish/pipeliner
