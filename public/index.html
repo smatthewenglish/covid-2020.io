@@ -93,19 +93,16 @@ particlesJS.load('particles_background', './config/particles.json', function () 
 </script>
 
 <script>
-d3.csv("./data/population.csv", function(err, data) {
+d3.csv("./data/csbs.csv", function(err, data) {
 
-  var config = {"color1":"#322f30","color2":"#ff0000","stateDataColumn":"state_or_territory","valueDataColumn":"population_estimate_for_july_1_2013_number"}
-  
-  var COLOR_COUNTS = 9;
-  
+  var COLOR_COUNTS = 9;  
   var SCALE = 0.7;
   
   function Interpolate(start, end, steps, count) {
-      var s = start,
-          e = end,
-          final = s + (((e - s) / steps) * count);
-      return Math.floor(final);
+    var s = start;
+    var e = end;
+    var final = s + (((e - s) / steps) * count);
+    return Math.floor(final);
   }
   
   function Color(_r, _g, _b) {
@@ -148,7 +145,13 @@ d3.csv("./data/population.csv", function(err, data) {
     }
   }
   
-  var COLOR_FIRST = config.color1, COLOR_LAST = config.color2;
+  //var config = {"color1":"#322f30","color2":"#ff0000","stateDataColumn":"state","valueDataColumn":"confirmed"}
+  var COLOR_FIRST = "#322f30";
+  var COLOR_LAST = "#ff0000";
+  var MAP_STATE = "state";
+  var MAP_CONFIRMED = "confirmed";
+  var MAP_DEATHS = "deaths";
+  var MAP_RECOVERED = "recovered";
   
   var rgb = hexToRgb(COLOR_FIRST);
   
@@ -157,16 +160,16 @@ d3.csv("./data/population.csv", function(err, data) {
   rgb = hexToRgb(COLOR_LAST);
   var COLOR_END = new Color(rgb.r, rgb.g, rgb.b);
   
-  var MAP_STATE = config.stateDataColumn;
-  var MAP_VALUE = config.valueDataColumn;
   
   var width = 655;
   var height = 355;
   
-  var valueById = d3.map();
+  var confirmedById = d3.map();
+  var deathsById = d3.map();
+  var recoveredById = d3.map();
   
-  var startColors = COLOR_START.getColors(),
-      endColors = COLOR_END.getColors();
+  var startColors = COLOR_START.getColors();
+  var endColors = COLOR_END.getColors();
   
   var colors = [];
   
@@ -193,21 +196,36 @@ d3.csv("./data/population.csv", function(err, data) {
   
   d3.tsv("https://s3-us-west-2.amazonaws.com/vida-public/geo/us-state-names.tsv", function(error, names) {
   
+
+
+
   name_id_map = {};
-  id_name_map = {};
+  id_name_map0 = {};
+  //id_name_map1 = {};
+  //id_name_map2 = {};
   
   for (var i = 0; i < names.length; i++) {
     name_id_map[names[i].name] = names[i].id;
-    id_name_map[names[i].id] = names[i].name;
+    id_name_map0[names[i].id] = names[i].name;
+
+
+// console.log("FUCKFUCKFUCK")
+// console.log(names[i].name)
+// console.log("FUCKFUCKFUCK")
+
   }
   
   data.forEach(function(d) {
     var id = name_id_map[d[MAP_STATE]];
-    valueById.set(id, +d[MAP_VALUE]); 
+    //var confirmed = d[MAP_CONFIRMED];
+    //var id = name_id_map[d[MAP_STATE]];
+    confirmedById.set(id, + d[MAP_CONFIRMED]);
+    deathsById.set(id, + d[MAP_DEATHS]);
+    recoveredById.set(id, + d[MAP_RECOVERED]);
   });
   
-  quantize.domain([d3.min(data, function(d){ return +d[MAP_VALUE] }),
-    d3.max(data, function(d){ return +d[MAP_VALUE] })]);
+  quantize.domain([d3.min(data, function(d){ return +d[MAP_CONFIRMED] }),
+    d3.max(data, function(d){ return +d[MAP_CONFIRMED] })]);
   
   d3.json("https://s3-us-west-2.amazonaws.com/vida-public/geo/us.json", function(error, us) {
     svg.append("g")
@@ -217,8 +235,8 @@ d3.csv("./data/population.csv", function(err, data) {
       .enter().append("path")
         .attr("transform", "scale(" + SCALE + ")")
         .style("fill", function(d) {
-          if (valueById.get(d.id)) {
-            var i = quantize(valueById.get(d.id));
+          if (confirmedById.get(d.id)) {
+            var i = quantize(confirmedById.get(d.id));
             var color = colors[i].getColors();
             return "rgb(" + color.r + "," + color.g +
                 "," + color.b + ")";
@@ -228,6 +246,15 @@ d3.csv("./data/population.csv", function(err, data) {
         })
         .attr("d", path)
         .on("mousemove", function(d) {
+
+
+// console.log("FUCKFUCKFUCK")
+// console.log(d.id)
+// console.log(confirmedById.get(d.id))
+// console.log(deathsById.get(d.id))
+// console.log(recoveredById.get(d.id))
+// console.log("FUCKFUCKFUCK")         
+
             var html = "";
   
             html += "<div class=\"tooltip_kv\">";
@@ -235,23 +262,25 @@ d3.csv("./data/population.csv", function(err, data) {
 
             html += "<div class=\"tip_header\">"; 
 
-              html += "<p class=\"tooltip_key\">"; //style= {float: left; width:50%; text-align:left;} 
-              html += id_name_map[d.id];
+              html += "<p class=\"tooltip_key\">";
+              html += id_name_map0[d.id];
               html += "</p>";
 
               html += "<p >"; //style= {float: right; width:50%; text-align:right;}
-              html += "&nbsp;&nbsp;&nbsp;&nbsp;03.21"
+              html += "&nbsp;&nbsp;&nbsp;&nbsp;03.22"
               html += "</p>";
 
             html += "</div>"; 
 
             html += "<hr/>";
 
-            html += "<span class=\"infected\">";
-            html += "infected:";
+            html += "<span class=\"confirmed\">";
+            html += "confirmed:";
+
+
 
               html += "<span class=\"tooltip_value\">";
-              html += (valueById.get(d.id) ? valueFormat(valueById.get(d.id)) : "");
+              html += confirmedById.get(d.id);
               html += "</span>";
 
             html += "</span>";
@@ -261,7 +290,7 @@ d3.csv("./data/population.csv", function(err, data) {
             html += "deceased:";
 
               html += "<span class=\"tooltip_value\">";
-              html += (valueById.get(d.id) ? valueFormat(valueById.get(d.id)) : "");
+              html += deathsById.get(d.id);
               html += "</span>";
 
             html += "</span>";
@@ -271,7 +300,7 @@ d3.csv("./data/population.csv", function(err, data) {
             html += "recovered:";
 
               html += "<span class=\"tooltip_value\">";
-              html += (valueById.get(d.id) ? valueFormat(valueById.get(d.id)) : "");
+              html += recoveredById.get(d.id);
               html += "</span>";
 
             html += "</span>";
