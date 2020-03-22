@@ -1,6 +1,6 @@
 # COVID-2020
 
-| ![COVID-2020](https://www.covid-2020.io/yes.jpeg "COVID-2020") |
+| ![COVID-2020](https://www.covid-2020.io/image/meta/preview.png "COVID-2020") |
 | :--: | 
 
 ### »if you're worried ~ if you're not worried«
