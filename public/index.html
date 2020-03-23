@@ -93,9 +93,9 @@ particlesJS.load('particles_background', './config/particles.json', function () 
 </script>
 
 <script>
-d3.csv("./data/csbs.csv", function(err, data) {
   var COLOR_COUNTS = 254;  
   var SCALE = 0.7;
+
   function Color(_r, _g, _b) {
       var r, g, b;
       var setColors = function(_r, _g, _b) {
@@ -113,6 +113,7 @@ d3.csv("./data/csbs.csv", function(err, data) {
           return colors;
       };
   }
+
   function hexToRgb(hex) {
       var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
       return result ? {
@@ -121,6 +122,7 @@ d3.csv("./data/csbs.csv", function(err, data) {
           b: parseInt(result[3], 16)
       } : null;
   }
+
   var COLOR_FIRST = "#322f30";
   var COLOR_LAST = "#ff0000";
   var MAP_STATE = "state";
@@ -135,22 +137,12 @@ d3.csv("./data/csbs.csv", function(err, data) {
   
   var width = 900;
   var height = 535;
+
   
-  var confirmedById = d3.map();
-  var deathsById = d3.map();
-  var recoveredById = d3.map();
   
   var startColors = COLOR_START.getColors();
   var endColors = COLOR_END.getColors();
   
-  var colors = [];
-  
-  for (var i = 0; i < COLOR_COUNTS; i++) {
-    var r = Interpolate(startColors.r, endColors.r, COLOR_COUNTS, i);
-    var g = Interpolate(startColors.g, endColors.g, COLOR_COUNTS, i);
-    var b = Interpolate(startColors.b, endColors.b, COLOR_COUNTS, i);
-    colors.push(new Color(r, g, b));
-  }
 
   function Interpolate(start, end, steps, count) {
     var s = start;
@@ -158,36 +150,58 @@ d3.csv("./data/csbs.csv", function(err, data) {
     var final = s + (((e - s) / steps) * count);
     return Math.floor(final);
   }
-  
+
+  function getColors() {
+    var colors = [];
+    for (var i = 0; i < COLOR_COUNTS; i++) {
+      var r = Interpolate(startColors.r, endColors.r, COLOR_COUNTS, i);
+      var g = Interpolate(startColors.g, endColors.g, COLOR_COUNTS, i);
+      var b = Interpolate(startColors.b, endColors.b, COLOR_COUNTS, i);
+      colors.push(new Color(r, g, b));
+    }
+    return colors;
+  }
+
+  var colors = getColors()
+
   var quantize = d3.scale
       .quantize()
       .range(d3.range(COLOR_COUNTS).map(value => { return value }));
-  
-  var path = d3.geo.path();
-  
-  var svg0 = d3
+
+      var path = d3.geo.path();
+
+      var svg0 = d3
       .select("#content")
       .append("svg")
-      .attr("class", "fuckFuck")
+      .attr("class", "united_states")
       .attr("width", width)
       .attr("height", height)
       .attr("preserveAspectRatio", "xMinYMin meet");
-  
-  d3.tsv("//s3-us-west-2.amazonaws.com/vida-public/geo/us-state-names.tsv").get(function(error, names) {
-  name_id_map = {};
-  id_name_map = {};
-  
-  for (var i = 0; i < names.length; i++) {
-    name_id_map[names[i].name] = names[i].id;
-    id_name_map[names[i].id] = names[i].name;
-  }
-  data.forEach(function(d) {
+
+  var name_id_map = {};
+  var id_name_map = {};
+
+  var confirmedById = d3.map();
+  var deathsById = d3.map();
+  var recoveredById = d3.map();
+
+  function createByIdMaps(d) {
     var id = name_id_map[d[MAP_STATE]];
     
     confirmedById.set(id, + d[MAP_CONFIRMED]);
     deathsById.set(id, + d[MAP_DEATHS]);
     recoveredById.set(id, + d[MAP_RECOVERED]);
-  });
+  }
+
+d3.csv("./data/csbs.csv").get(function(err, data) {
+  
+  d3.tsv("//s3-us-west-2.amazonaws.com/vida-public/geo/us-state-names.tsv").get(function(error, names) {
+  
+  for (var i = 0; i < names.length; i++) {
+    name_id_map[names[i].name] = names[i].id;
+    id_name_map[names[i].id] = names[i].name;
+  }
+  data.forEach(value => { createByIdMaps(value) } );
   quantize.domain(
     [
       d3.min(data, function(d){ return +d[MAP_CONFIRMED] }), 

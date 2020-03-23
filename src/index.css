@@ -39,11 +39,14 @@ html, body {
   float: right;
 }
 
-.fuckFuck {
+.united_states {
   border: 5px dotted magenta;
-  position: absolute;
+/*  position: absolute;
   top: 25%;
-  left: 25%;
+  left: 25%;*/
+/*  position: relative;*/
+/*  top: 20%;*/
+  margin-left: 25%;
 } 
 
 /*#map_container {
