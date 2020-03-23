@@ -28,6 +28,8 @@ html, body {
   padding: 10px;
   border: 1px solid;
   display: none;
+  top: 21%;
+  right: 1%;
 }
 
 .tooltip_key {
@@ -43,6 +45,7 @@ html, body {
 } */
 
 #map_usa {
+  padding-right: 200px;
   width: 100%;
   height: auto;
 /*  border: 5px dotted magenta;*/
@@ -173,6 +176,10 @@ html, body {
 
   .box .row.footer {
     padding-bottom: 0px;
+  }
+
+  #map_usa {
+    padding-right: 0px;
   }
 
 }

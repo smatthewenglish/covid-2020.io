@@ -340,17 +340,8 @@
     $("#tooltip-container").html(html);
     d3.select(".selecter").attr("fill-opacity", "0.8");
     $("#tooltip-container").show();
-    
-    if (d3.event.layerX < map_width / 2) {
-      d3.select("#tooltip-container")
-        .style("top", d3.event.layerY + 15 + "px")
-        .style("left", d3.event.layerX + 15 + "px");
-      return;
-    }
-    var tooltip_width = $("#tooltip-container").width();
-    d3.select("#tooltip-container")
-      .style("top", d3.event.layerY + 15 + "px")
-      .style("left", d3.event.layerX - tooltip_width - 30 + "px");
   }
+
+  $("#tooltip-container").click(function() { mouseout() });
 
 </script>
