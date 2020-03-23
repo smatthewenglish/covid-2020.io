@@ -1,44 +1,44 @@
 state,confirmed,deaths,recovered
-New York,16897,119,0
-New Jersey,1693,18,0
-Washington,1837,95,0
-California,1839,35,0
+New York,20768,120,0
+New Jersey,2306,81,0
+Washington,1838,95,0
+California,1873,35,0
 Michigan,1042,10,0
-Louisiana,826,20,0
+Louisiana,1161,21,0
 Florida,1170,13,0
 Illinois,1048,6,0
-Georgia,679,15,0
-Texas,698,8,0
+Georgia,727,15,0
+Texas,722,9,0
 Massachusetts,616,2,0
 Pennsylvania,644,5,0
 Colorado,594,7,0
 Tennessee,475,2,0
 Wisconsin,403,5,0
-Ohio,360,3,0
-North Carolina,330,0,0
+Ohio,360,6,0
+North Carolina,331,0,0
 Connecticut,327,8,0
 Maryland,290,3,0
-Indiana,204,7,0
+Indiana,205,7,0
+Virginia,254,6,0
 Mississippi,207,1,0
-Virginia,248,6,0
 Arizona,234,2,0
+Minnesota,215,1,0
 South Carolina,196,3,0
-Nevada,155,2,0
+Nevada,156,2,0
 Utah,181,1,0
-Minnesota,169,1,0
 Arkansas,168,0,0
 Alabama,167,0,0
 Oregon,162,5,0
-Missouri,148,3,0
+Missouri,151,3,0
 District of Columbia,120,2,0
 Maine,102,0,0
 Rhode Island,101,0,0
+Iowa,105,0,0
 Kentucky,64,3,0
-Iowa,101,0,0
+New Hampshire,78,1,0
 Oklahoma,81,2,0
-New Hampshire,78,0,0
+Vermont,75,2,0
 Kansas,70,2,0
-Vermont,66,2,0
 New Mexico,65,0,0
 Delaware,64,0,0
 Hawaii,56,0,0
