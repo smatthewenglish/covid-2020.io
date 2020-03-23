@@ -234,11 +234,8 @@ d3.csv("./data/csbs.csv").get(function(error, data) {
           return "";
       })
       .attr("d", path)
-      .attr("class", "fuck_fuck_fuck")
-      .on("mouseout", function() {
-                $('.fuck_fuck_fuck').attr("fill-opacity", "1.0");
-                $("#tooltip-container").hide();
-            })
+      .attr("class", "selecter")
+      .on("mouseout", mouseout)
       .on("mousemove", function(d) {
             var html = "";
             html += "<div class=\"tooltip_kv\">";
@@ -296,10 +293,10 @@ d3.csv("./data/csbs.csv").get(function(error, data) {
 
 });
 
-// function mouseout(p){
-//           $(p).attr("fill-opacity", "1.0");
-//           $("#tooltip-container").hide();
-// }
+function mouseout(){
+  d3.selectAll('.selecter').attr("fill-opacity", "1.0");
+  $("#tooltip-container").hide();
+}
 
 
 </script>
