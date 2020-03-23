@@ -234,9 +234,33 @@ d3.csv("./data/csbs.csv").get(function(error, data) {
           return "";
       })
       .attr("d", path)
-      .attr("class", "selecter")
+       .on("mouseover", function(d, i) {
+            d3.select(this).attr("class", "selecter");
+          })
       .on("mouseout", mouseout)
-      .on("mousemove", function(d) {
+      .on("mousemove", d => {
+        mousemove(d)
+      });
+        
+    svg0.append("path")
+        .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
+        .attr("class", "states")
+        .attr("d", path);
+       
+  });
+  });
+
+
+});
+
+function mouseout(){
+  d3.select('.selecter')
+  .attr("fill-opacity", "1.0")
+  .attr("class", "selected");;
+  $("#tooltip-container").hide();
+}
+
+function mousemove(d) {
             var html = "";
             html += "<div class=\"tooltip_kv\">";
               html += "<h3 class=\"tooltip_key\">";
@@ -264,9 +288,9 @@ d3.csv("./data/csbs.csv").get(function(error, data) {
             html += "</span>";
             html += "</div>";
             $("#tooltip-container").html(html);
-            $(this).attr("fill-opacity", "0.8");
+            d3.select('.selecter').attr("fill-opacity", "0.8");
             $("#tooltip-container").show();
-            var coordinates = d3.mouse(this);
+            //var coordinates = d3.mouse(p);
             
             var map_width = $('.choropleth')[0].getBoundingClientRect().width;
             
@@ -280,23 +304,7 @@ d3.csv("./data/csbs.csv").get(function(error, data) {
             d3.select("#tooltip-container")
             .style("top", (d3.event.layerY + 15) + "px")
             .style("left", (d3.event.layerX - tooltip_width - 30) + "px");
-        });
-        
-    svg0.append("path")
-        .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
-        .attr("class", "states")
-        .attr("d", path);
-       
-  });
-  });
-
-
-});
-
-function mouseout(){
-  d3.selectAll('.selecter').attr("fill-opacity", "1.0");
-  $("#tooltip-container").hide();
-}
+        }
 
 
 </script>
