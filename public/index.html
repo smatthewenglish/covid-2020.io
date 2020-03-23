@@ -1,153 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-  
   <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
 
     <title>COVID-2020 • if you're worried ~ if you're not worried</title>
 
     <!-- LINK -->
-    <link rel="manifest"      href="%PUBLIC_URL%/manifest.json" />
-    <link rel="icon"          href="%PUBLIC_URL%/image/meta/favicon.png" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/image/meta/favicon.png"/>
-    <link rel="author"        href="https://www.covid-2020.io"/>
-    <link rel="canonical"     href="https://www.covid-2020.io"/>
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="icon" href="%PUBLIC_URL%/image/meta/favicon.png" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/image/meta/favicon.png" />
+    <link rel="author" href="https://www.covid-2020.io" />
+    <link rel="canonical" href="https://www.covid-2020.io" />
 
     <!-- TITLE -->
-    <meta property="og:site_name" content="COVID-2020 • if you're worried ~ if you're not worried"/>
-    <meta itemprop="name"         content="COVID-2020 • if you're worried ~ if you're not worried"/>
-    <meta property="og:title"     content="COVID-2020 • if you're worried ~ if you're not worried"/>
-    <meta name="twitter:title"    content="COVID-2020 • if you're worried ~ if you're not worried"/>
+    <meta
+      property="og:site_name"
+      content="COVID-2020 • if you're worried ~ if you're not worried"
+    />
+    <meta
+      itemprop="name"
+      content="COVID-2020 • if you're worried ~ if you're not worried"
+    />
+    <meta
+      property="og:title"
+      content="COVID-2020 • if you're worried ~ if you're not worried"
+    />
+    <meta
+      name="twitter:title"
+      content="COVID-2020 • if you're worried ~ if you're not worried"
+    />
 
     <!-- IMAGE -->
-    <meta itemprop="image"     content="%PUBLIC_URL%/image/meta/preview.png?v=0"/>
-    <meta property="og:image"  content="%PUBLIC_URL%/image/meta/preview.png?v=0"/>
-    <meta name="twitter:image" content="%PUBLIC_URL%/image/meta/preview.png?v=0"/>
-    <meta name="twitter:card"  content="%PUBLIC_URL%/image/meta/preview.png?v=0"/>
+    <meta itemprop="image" content="%PUBLIC_URL%/image/meta/preview.png?v=0" />
+    <meta
+      property="og:image"
+      content="%PUBLIC_URL%/image/meta/preview.png?v=0"
+    />
+    <meta
+      name="twitter:image"
+      content="%PUBLIC_URL%/image/meta/preview.png?v=0"
+    />
+    <meta
+      name="twitter:card"
+      content="%PUBLIC_URL%/image/meta/preview.png?v=0"
+    />
 
     <!-- DESCRIPTION -->
-    <meta itemprop="description"     content="timely and accurate infographic"/>
-    <meta itemprop="description"     content="timely and accurate infographic"/>
-    <meta property="og:description"  content="timely and accurate infographic"/>
-    <meta name="twitter:description" content="timely and accurate infographic"/>
+    <meta itemprop="description" content="timely and accurate infographic" />
+    <meta itemprop="description" content="timely and accurate infographic" />
+    <meta property="og:description" content="timely and accurate infographic" />
+    <meta
+      name="twitter:description"
+      content="timely and accurate infographic"
+    />
 
     <!-- MISC. -->
-    <meta name="author"          content="COVID-2020"/>
-    <meta name="twitter:creator" content="@smatthewenglish"/>
-    <meta name="viewport"        content="width=device-width, initial-scale=1"/>
-    <meta name="viewport"        content="width=device-width, initial-scale=1"/>
-    <meta property="og:url"      content="https://www.covid-2020.io"/> 
-    
+    <meta name="author" content="COVID-2020" />
+    <meta name="twitter:creator" content="@smatthewenglish" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:url" content="https://www.covid-2020.io" />
+
     <!-- JAVASCRIPT -->
     <script src="//cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.1.0/topojson.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    
   </head>
   <body>
+    <div class="box">
+      <!-- 0:BOX -->
 
-  <div class="box"><!-- 0:BOX -->
+      <div class="row header">
+        <!-- 0:HEADER -->
 
-    <div class="row header"><!-- 0:HEADER -->
-
-      <div id="particles_background"></div>                       <!-- <<-PARTICLES -->
-      <img class="title" src="./image/header/title.svg"/>   <!-- <<-TITLE IMG -->
-
-    </div><!-- 1:HEADER --> 
-    
-    <div class="row content" id="content"><!-- 0:CONTENT -->
-
-     
-      <div id="tooltip-container"></div>
-
-    </div><!-- 1:CONTENT -->
-
-    <div class="row footer"><!-- 0:FOOTER -->
-
-      <div class="footer_member">
-        <a href="https://www.who.int/" class="footer_box">
-          <img class="footer_img" src="./image/footer/worldhealthorg.png"/>
-        </a>
-        <a href="https://www.cdc.gov/" class="footer_box">
-          <img class="footer_img" src="./image/footer/cdctrl.png"/>
-        </a>
-        <a href="https://www.whitehouse.gov/" class="footer_box">
-          <img class="footer_img" src="./image/footer/whitehouse.png"/>
-        </a>
-        <a href="https://github.com/smatthewenglish/covid-2020.io" class="footer_box">
-          <img class="footer_img" src="./image/footer/github.png"/>
-        </a>
+        <div id="particles_background"></div>
+        <!-- <<-PARTICLES -->
+        <img class="title" src="./image/header/title.svg" />
+        <!-- <<-TITLE IMG -->
       </div>
+      <!-- 1:HEADER -->
 
-    </div><!-- 1:FOOTER -->
-    
-  </div><!-- 1:BOX --> 
+      <div class="row content" id="content">
+        <!-- 0:CONTENT -->
+
+        <div id="tooltip-container"></div>
+      </div>
+      <!-- 1:CONTENT -->
+
+      <div class="row footer">
+        <!-- 0:FOOTER -->
+
+        <div class="footer_member">
+          <a href="https://www.who.int/" class="footer_box">
+            <img class="footer_img" src="./image/footer/worldhealthorg.png" />
+          </a>
+          <a href="https://www.cdc.gov/" class="footer_box">
+            <img class="footer_img" src="./image/footer/cdctrl.png" />
+          </a>
+          <a href="https://www.whitehouse.gov/" class="footer_box">
+            <img class="footer_img" src="./image/footer/whitehouse.png" />
+          </a>
+          <a
+            href="https://github.com/smatthewenglish/covid-2020.io"
+            class="footer_box"
+          >
+            <img class="footer_img" src="./image/footer/github.png" />
+          </a>
+        </div>
+      </div>
+      <!-- 1:FOOTER -->
+    </div>
+    <!-- 1:BOX -->
   </body>
 </html>
 
 <script>
-particlesJS.load('particles_background', './config/particles.json', function () {
-  console.log('callback - particles.js config loaded');
-});
+  particlesJS.load(
+    "particles_background",
+    "./config/particles.json",
+    function() {
+      console.log("callback - particles.js config loaded");
+    }
+  );
 </script>
 
 <script>
-  var COLOR_COUNTS = 254;  
-  var SCALE = 0.7;
-
-  function Color(_r, _g, _b) {
-      var r, g, b;
-      var setColors = function(_r, _g, _b) {
-          r = _r;
-          g = _g;
-          b = _b;
-      };
-      setColors(_r, _g, _b);
-      this.getColors = function() {
-          var colors = {
-              r: r,
-              g: g,
-              b: b
-          };
-          return colors;
-      };
-  }
-
-  function hexToRgb(hex) {
-      var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-      return result ? {
-          r: parseInt(result[1], 16),
-          g: parseInt(result[2], 16),
-          b: parseInt(result[3], 16)
-      } : null;
-  }
-
   var COLOR_FIRST = "#322f30";
   var COLOR_LAST = "#ff0000";
   var MAP_STATE = "state";
   var MAP_CONFIRMED = "confirmed";
   var MAP_DEATHS = "deaths";
   var MAP_RECOVERED = "recovered";
-  
+
+  var COLOR_COUNTS = 254;
+  var SCALE = 0.7;
+
+  function Color(_r, _g, _b) {
+    var r, g, b;
+    var setColors = function(_r, _g, _b) {
+      r = _r;
+      g = _g;
+      b = _b;
+    };
+    setColors(_r, _g, _b);
+    this.getColors = function() {
+      var colors = {
+        r: r,
+        g: g,
+        b: b
+      };
+      return colors;
+    };
+  }
+
+  function hexToRgb(hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result
+      ? {
+          r: parseInt(result[1], 16),
+          g: parseInt(result[2], 16),
+          b: parseInt(result[3], 16)
+        }
+      : null;
+  }
+
   var rgb0 = hexToRgb(COLOR_FIRST);
   var COLOR_START = new Color(rgb0.r, rgb0.g, rgb0.b);
   var rgb1 = hexToRgb(COLOR_LAST);
   var COLOR_END = new Color(rgb1.r, rgb1.g, rgb1.b);
-  
+
   var width = 900;
   var height = 535;
 
-  
-  
   var startColors = COLOR_START.getColors();
   var endColors = COLOR_END.getColors();
-  
 
   function Interpolate(start, end, steps, count) {
     var s = start;
     var e = end;
-    var final = s + (((e - s) / steps) * count);
+    var final = s + ((e - s) / steps) * count;
     return Math.floor(final);
   }
 
@@ -162,21 +194,61 @@ particlesJS.load('particles_background', './config/particles.json', function () 
     return colors;
   }
 
-  var colors = getColors()
+  var colors = getColors();
 
-  var quantize = d3.scale
-      .quantize()
-      .range(d3.range(COLOR_COUNTS).map(value => { return value }));
+  var quantize = d3.scale.quantize().range(
+    d3.range(COLOR_COUNTS).map(value => {
+      return value;
+    })
+  );
 
-      var path = d3.geo.path();
+  var path = d3.geo.path();
 
-      var svg0 = d3
-      .select("#content")
-      .append("svg")
-      .attr("class", "united_states")
-      .attr("width", width)
-      .attr("height", height)
-      .attr("preserveAspectRatio", "xMinYMin meet");
+  var svg0 = d3
+    .select("#content")
+    .append("svg")
+    // Container class to make it responsive.
+    .classed("svg-container", true) 
+    .attr("class", "united_states")
+    .attr("id", "map_usa")
+    .attr("width", width)
+    .attr("height", height)
+    .attr("viewBox", "0 0 " + width + " " + height )
+    .attr("preserveAspectRatio", "xMinYMin meet")
+       // Class to make it responsive.
+   .classed("svg-content-responsive", true)
+   .on("resize", function() {
+    var targetWidth = chart.node().getBoundingClientRect().width;
+    chart.attr("width", targetWidth);
+    chart.attr("height", targetWidth / aspect);
+  });
+
+   //.attr("id", "svg")
+
+   
+   //document.getElementById('#content').clientWidth;
+
+
+// d3.select("div#chartId")
+//    .append("div")
+//    // Container class to make it responsive.
+//    .classed("svg-container", true) 
+//    .append("svg")
+//    // Responsive SVG needs these 2 attributes and no width and height attr.
+//    .attr("preserveAspectRatio", "xMinYMin meet")
+//    .attr("viewBox", "0 0 600 400")
+//    // Class to make it responsive.
+//    .classed("svg-content-responsive", true)
+//    // Fill with a rectangle for visualization.
+//    .append("rect")
+//    .classed("rect", true)
+//    .attr("width", 600)
+//    .attr("height", 400);
+
+
+
+  // var selection = d3.select(".united_states"); 
+  // width = selection[0][0].clientWidth;
 
   var name_id_map = {};
   var id_name_map = {};
@@ -187,128 +259,154 @@ particlesJS.load('particles_background', './config/particles.json', function () 
 
   function createByIdMaps(d) {
     var id = name_id_map[d[MAP_STATE]];
-    
-    confirmedById.set(id, + d[MAP_CONFIRMED]);
-    deathsById.set(id, + d[MAP_DEATHS]);
-    recoveredById.set(id, + d[MAP_RECOVERED]);
+
+    confirmedById.set(id, +d[MAP_CONFIRMED]);
+    deathsById.set(id, +d[MAP_DEATHS]);
+    recoveredById.set(id, +d[MAP_RECOVERED]);
   }
 
-  function zap(d){ 
+  function numberOfCases(d) {
     return +d[MAP_CONFIRMED];
   }
 
-d3.csv("./data/csbs.csv").get(function(error, data) {
-  d3.tsv("./data/us-state-names.tsv").get(function(error, names) {
-  
-  for (var i = 0; i < names.length; i++) {
-    name_id_map[names[i].name] = names[i].id;
-    id_name_map[names[i].id] = names[i].name;
-  }
-  data.forEach(value => { createByIdMaps(value) } );
-  quantize.domain(
-    [
-      d3.min(data, d => { return zap(d) } ), 
-      d3.max(data, d => { return zap(d) } ),
-    ]);
-  d3.json("./data/us.json").get( (error, usa) => {zahzahzah(error, usa)})});
-});
+  d3.csv("./data/csbs.csv").get(function(error, data) {
+    d3.tsv("./data/us-state-names.tsv").get(function(error, names) {
+      for (var i = 0; i < names.length; i++) {
+        name_id_map[names[i].name] = names[i].id;
+        id_name_map[names[i].id] = names[i].name;
+      }
+      data.forEach(value => {
+        createByIdMaps(value);
+      });
+      quantize.domain([
+        d3.min(data, d => {
+          return numberOfCases(d);
+        }),
+        d3.max(data, d => {
+          return numberOfCases(d);
+        })
+      ]);
+      d3.json("./data/us.json").get((error, usa) => {
+        colorizeState(error, usa);
+      });
+    });
+  });
 
-function zahzahzah(error, us) {
+  function colorizeState(error, us) {
     svg0
       .append("g")
       .attr("class", "choropleth")
       .selectAll("path")
-      .data(
-        topojson
-          .feature(
-            us, 
-            us.objects.states
-          )
-          .features
-      )
+      .data(topojson.feature(us, us.objects.states).features)
       .enter()
       .append("path")
       .style("fill", d => {
-          if (confirmedById.get(d.id)) {
-            var i = quantize(confirmedById.get(d.id) + deathsById.get(d.id) - recoveredById.get(d.id));
-            var color = colors[i].getColors();
-            return "rgb("+color.r+","+color.g+","+color.b+")";
-          }
-          return "";
+        if (confirmedById.get(d.id)) {
+          var i = quantize( confirmedById.get(d.id) + deathsById.get(d.id) - recoveredById.get(d.id) );
+          var color = colors[i].getColors();
+          return "rgb(" + color.r + "," + color.g + "," + color.b + ")";
+        }
+        return "";
       })
       .attr("d", path)
-       .on("mouseover", function(d, i) {
-            d3.select(this).attr("class", "selecter");
-          })
+      .on("mouseover", function(d, i) {
+        d3.select(this).attr("class", "selecter");
+      })
       .on("mouseout", mouseout)
       .on("mousemove", d => {
-        mousemove(d)
+        mousemove(d);
       });
-        
-    svg0.append("path")
-        .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
-        .attr("class", "states")
-        .attr("d", path);
-       
+
+    svg0
+      .append("path")
+      .datum(
+        topojson.mesh(us, us.objects.states, function(a, b) {
+          return a !== b;
+        })
+      )
+      .attr("class", "states")
+      .attr("d", path);
   }
 
-function mouseout(){
-  d3.select('.selecter')
-  .attr("fill-opacity", "1.0")
-  .attr("class", "selected");;
-  $("#tooltip-container").hide();
-}
+  function mouseout() {
+    d3.select(".selecter")
+      .attr("fill-opacity", "1.0")
+      .attr("class", "selected");
+    $("#tooltip-container").hide();
+  }
 
-function mousemove(d) {
-  var html = "";
-  html += "<div class=\"tooltip_kv\">";
-    html += "<h3 class=\"tooltip_key\">";
+  function mousemove(d) {
+    var html = "";
+    html += '<div class="tooltip_kv">';
+    html += '<h3 class="tooltip_key">';
     html += id_name_map[d.id];
     html += "</h3>";
-  html += "<span class=\"confirmed\">";
-  html += "confirmed:";
-    html += "<span class=\"tooltip_value\">";
+    html += '<span class="confirmed">';
+    html += "confirmed:";
+    html += '<span class="tooltip_value">';
     html += confirmedById.get(d.id);
     html += "</span>";
-  html += "</span>";
-  html += "</br>";
-  html += "<span class=\"deceased\">";
-  html += "deceased:";
-    html += "<span class=\"tooltip_value\">";
+    html += "</span>";
+    html += "</br>";
+    html += '<span class="deceased">';
+    html += "deceased:";
+    html += '<span class="tooltip_value">';
     html += deathsById.get(d.id);
     html += "</span>";
-  html += "</span>";
-  html += "</br>";
-  html += "<span class=\"recovered\">";
-  html += "recovered:";
-    html += "<span class=\"tooltip_value\">";
+    html += "</span>";
+    html += "</br>";
+    html += '<span class="recovered">';
+    html += "recovered:";
+    html += '<span class="tooltip_value">';
     html += recoveredById.get(d.id);
     html += "</span>";
-  html += "</span>";
-  html += "</div>";
-  $("#tooltip-container").html(html);
-  d3.select('.selecter').attr("fill-opacity", "0.8");
-  $("#tooltip-container").show();
-  //var coordinates = d3.mouse(p);
-  
-  var map_width = $('.choropleth')[0].getBoundingClientRect().width;
-  
-  if (d3.event.layerX < map_width / 2) {
+    html += "</span>";
+    html += "</div>";
+    $("#tooltip-container").html(html);
+    d3.select(".selecter").attr("fill-opacity", "0.8");
+    $("#tooltip-container").show();
+    //var coordinates = d3.mouse(p);
+
+    // d3
+    // .select("#content")
+
+   
+
+    if (d3.event.layerX < map_width / 2) {
+      d3.select("#tooltip-container")
+        .style("top", d3.event.layerY + 15 + "px")
+        .style("left", d3.event.layerX + 15 + "px");
+      return;
+    }
+    var tooltip_width = $("#tooltip-container").width();
     d3.select("#tooltip-container")
-      .style("top", (d3.event.layerY + 15) + "px")
-      .style("left", (d3.event.layerX + 15) + "px");
-      return
+      .style("top", d3.event.layerY + 15 + "px")
+      .style("left", d3.event.layerX - tooltip_width - 30 + "px");
   }
-  var tooltip_width = $("#tooltip-container").width();
-  d3.select("#tooltip-container")
-  .style("top", (d3.event.layerY + 15) + "px")
-  .style("left", (d3.event.layerX - tooltip_width - 30) + "px");
+
+function updateWindow(){
+    // x = w.innerWidth || e.clientWidth || g.clientWidth;
+    // y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+
+    // svg.attr("width", x).attr("height", y);
+    // adjust things when the window size changes
+    
+    
+    //var targetWidth = $("#content")[0].getBoundingClientRect().width;
+    var overflow = $("body").css("overflow");
+    $("body").css("overflow", "hidden");
+
+    var width = $("#center").innerWidth();
+    var height = $(window).innerHeight() - 10;
+
+    $("body").css("overflow", overflow);
+    resize(width, height);
 }
+d3.select(window).on('resize.updatesvg', updateWindow);
 
-//$("svg").css({top: '25%', left: '25%', position:'absolute', border: '5px dotted magenta'});
 
+
+
+
+  //$("svg").css({top: '25%', left: '25%', position:'absolute', border: '5px dotted magenta'});
 </script>
-
-
-
-

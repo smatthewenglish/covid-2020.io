@@ -39,22 +39,31 @@ html, body {
   float: right;
 }
 
-.united_states {
-  border: 5px dotted magenta;
-/*  position: absolute;
-  top: 25%;
-  left: 25%;*/
-  /*position: absolute;*/
-  top: 25%;
-  margin-left: 25%;
-} 
+/*.united_states {
+} */
 
+#map_usa {
+  width: 100%;
+  height: auto;
+/*  border: 5px dotted magenta;*/
 
+}
 
-/*.svg0 {
-  background-color: orange;
-}*/
-/*$("svg").css({top: '25%', left: '25%', position:'absolute', border: '5px dotted magenta'});*/
+.box .row.content {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+
+  overflow: hidden;
+  background: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+/*  border: 5px solid blue;*/
+}
 
 .box {
   display: flex;
@@ -87,14 +96,7 @@ html, body {
   justify-content: center;
 }
 
-.box .row.content {
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: auto;
 
-  overflow: scroll;
-  background: white;
-}
 
 .box .row.footer {
 	/* border: 5px dashed green;*/
@@ -172,19 +174,6 @@ html, body {
   .box .row.footer {
     padding-bottom: 0px;
   }
-
-/* var width = 900;
-  var height = 535;*/
-  .united_states {
-  
-     border: 5px dotted green;
-
-     height: 50%;
-     left: 0px;
-     margin-left: 0px;
-     top: 20%;
-
-} 
 
 }
 
