@@ -45,9 +45,10 @@ html, body {
 } */
 
 #map_usa {
-  padding-right: 200px;
-  width: 100%;
-  height: auto;
+  /*padding-right: 200px;*/
+  width: auto;
+  height: 100%;
+/*  align-self: center;*/
 /*  border: 5px dotted magenta;*/
 
 }
@@ -111,8 +112,8 @@ html, body {
   
   height: fit-content;
 
-/*  padding-top: 4px;
-  padding-bottom: 4px;*/
+  padding-top: 8px;
+  padding-bottom: 8px;
 
   display: flex;
   flex-direction: row;
@@ -133,6 +134,7 @@ html, body {
   margin-bottom: 8px;*/
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -155,7 +157,7 @@ html, body {
   border-radius: 4px;
 }
 
-@media only screen and (max-width: 768px) { 
+@media only screen and (max-width: 899px) { 
   .title {
     /*border: 1px solid yellow;*/
     max-height: 12%;
@@ -179,8 +181,13 @@ html, body {
   }
 
   #map_usa {
-    padding-right: 0px;
-  }
+  /*padding-right: 200px;*/
+  width: 100%;
+  height: auto;
+/*  align-self: center;*/
+/*  border: 5px dotted magenta;*/
+
+}
 
 }
 
