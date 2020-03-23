@@ -223,33 +223,6 @@
     chart.attr("height", targetWidth / aspect);
   });
 
-   //.attr("id", "svg")
-
-   
-   //document.getElementById('#content').clientWidth;
-
-
-// d3.select("div#chartId")
-//    .append("div")
-//    // Container class to make it responsive.
-//    .classed("svg-container", true) 
-//    .append("svg")
-//    // Responsive SVG needs these 2 attributes and no width and height attr.
-//    .attr("preserveAspectRatio", "xMinYMin meet")
-//    .attr("viewBox", "0 0 600 400")
-//    // Class to make it responsive.
-//    .classed("svg-content-responsive", true)
-//    // Fill with a rectangle for visualization.
-//    .append("rect")
-//    .classed("rect", true)
-//    .attr("width", 600)
-//    .attr("height", 400);
-
-
-
-  // var selection = d3.select(".united_states"); 
-  // width = selection[0][0].clientWidth;
-
   var name_id_map = {};
   var id_name_map = {};
 
@@ -315,6 +288,8 @@
       .on("mouseout", mouseout)
       .on("mousemove", d => {
         mousemove(d);
+      }).on("click", function() {
+        alert("sup?");
       });
 
     svg0
@@ -365,13 +340,7 @@
     $("#tooltip-container").html(html);
     d3.select(".selecter").attr("fill-opacity", "0.8");
     $("#tooltip-container").show();
-    //var coordinates = d3.mouse(p);
-
-    // d3
-    // .select("#content")
-
-   
-
+    
     if (d3.event.layerX < map_width / 2) {
       d3.select("#tooltip-container")
         .style("top", d3.event.layerY + 15 + "px")
@@ -384,29 +353,4 @@
       .style("left", d3.event.layerX - tooltip_width - 30 + "px");
   }
 
-function updateWindow(){
-    // x = w.innerWidth || e.clientWidth || g.clientWidth;
-    // y = w.innerHeight|| e.clientHeight|| g.clientHeight;
-
-    // svg.attr("width", x).attr("height", y);
-    // adjust things when the window size changes
-    
-    
-    //var targetWidth = $("#content")[0].getBoundingClientRect().width;
-    var overflow = $("body").css("overflow");
-    $("body").css("overflow", "hidden");
-
-    var width = $("#center").innerWidth();
-    var height = $(window).innerHeight() - 10;
-
-    $("body").css("overflow", overflow);
-    resize(width, height);
-}
-d3.select(window).on('resize.updatesvg', updateWindow);
-
-
-
-
-
-  //$("svg").css({top: '25%', left: '25%', position:'absolute', border: '5px dotted magenta'});
 </script>
