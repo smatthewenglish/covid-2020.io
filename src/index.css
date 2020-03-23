@@ -104,8 +104,8 @@ $("svg").css({top: '25%', left: '25%', position:'absolute', border: '5px dotted 
   
   height: fit-content;
 
-  padding-top: 4px;
-  padding-bottom: 4px;
+/*  padding-top: 4px;
+  padding-bottom: 4px;*/
 
   display: flex;
   flex-direction: row;
@@ -122,8 +122,8 @@ $("svg").css({top: '25%', left: '25%', position:'absolute', border: '5px dotted 
 .footer_member {
   /* border: 1px solid yellow;*/
   width: fit-content;
-  margin-top: 8px;
-  margin-bottom: 8px;
+/*  margin-top: 8px;
+  margin-bottom: 8px;*/
   display: flex;
   flex-direction: row;
   justify-content: space-between;

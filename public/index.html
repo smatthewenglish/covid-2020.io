@@ -193,8 +193,11 @@ particlesJS.load('particles_background', './config/particles.json', function () 
     recoveredById.set(id, + d[MAP_RECOVERED]);
   }
 
-d3.csv("./data/csbs.csv").get(function(err, data) {
-  
+  function zap(d){ 
+    return +d[MAP_CONFIRMED];
+  }
+
+d3.csv("./data/csbs.csv").get(function(error, data) {
   d3.tsv("//s3-us-west-2.amazonaws.com/vida-public/geo/us-state-names.tsv").get(function(error, names) {
   
   for (var i = 0; i < names.length; i++) {
@@ -204,22 +207,38 @@ d3.csv("./data/csbs.csv").get(function(err, data) {
   data.forEach(value => { createByIdMaps(value) } );
   quantize.domain(
     [
-      d3.min(data, function(d){ return +d[MAP_CONFIRMED] }), 
-      d3.max(data, function(d){ return +d[MAP_CONFIRMED] })
+      d3.min(data, d => { return zap(d) } ), 
+      d3.max(data, d => { return zap(d) } ),
     ]);
   d3.json("https://s3-us-west-2.amazonaws.com/vida-public/geo/us.json").get(function(error, us) {
-    svg0.append("g").attr("class", "choropleth").selectAll("path").data(topojson.feature(us, us.objects.states).features).enter().append("path").style("fill", function(d) {
+    svg0
+      .append("g")
+      .attr("class", "choropleth")
+      .selectAll("path")
+      .data(
+        topojson.feature(
+          us, 
+          us.objects.states
+          )
+        .features
+      )
+      .enter()
+      .append("path")
+      .style("fill", d => {
           if (confirmedById.get(d.id)) {
             var i = quantize(confirmedById.get(d.id) + deathsById.get(d.id) - recoveredById.get(d.id));
             var color = colors[i].getColors();
-            return "rgb(" + color.r + "," + color.g + "," + color.b + ")";
+            return "rgb("+color.r+","+color.g+","+color.b+")";
           }
           return "";
-        })
-        .attr("d", path)
-        .on("mousemove", function(d) {
-         
-
+      })
+      .attr("d", path)
+      .on("mouseout", function() {
+                $(this).attr("fill-opacity", "1.0");
+                $("#tooltip-container").hide();
+            })
+      .on("mousemove", function(d) {
+        
             var html = "";
             html += "<div class=\"tooltip_kv\">";
 
@@ -265,24 +284,20 @@ d3.csv("./data/csbs.csv").get(function(err, data) {
             
             var coordinates = d3.mouse(this);
             
-            var map_width = $('.states-choropleth')[0].getBoundingClientRect().width;
+            var map_width = $('.choropleth')[0].getBoundingClientRect().width;
             
             if (d3.event.layerX < map_width / 2) {
               d3.select("#tooltip-container")
                 .style("top", (d3.event.layerY + 15) + "px")
                 .style("left", (d3.event.layerX + 15) + "px");
-            } else {
-              var tooltip_width = $("#tooltip-container").width();
-              d3.select("#tooltip-container")
-                .style("top", (d3.event.layerY + 15) + "px")
-                .style("left", (d3.event.layerX - tooltip_width - 30) + "px");
+                return
             }
-        })
-        .on("mouseout", function() {
-                $(this).attr("fill-opacity", "1.0");
-                $("#tooltip-container").hide();
-            });
-  
+            var tooltip_width = $("#tooltip-container").width();
+            d3.select("#tooltip-container")
+            .style("top", (d3.event.layerY + 15) + "px")
+            .style("left", (d3.event.layerX - tooltip_width - 30) + "px");
+        });
+        
     svg0.append("path")
         .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
         .attr("class", "states")
@@ -293,6 +308,7 @@ d3.csv("./data/csbs.csv").get(function(err, data) {
 
 
 });
+
 </script>
 
 
