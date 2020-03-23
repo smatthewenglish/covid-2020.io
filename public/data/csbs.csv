@@ -1,54 +1,54 @@
 state,confirmed,deaths,recovered
-New York,12323,76,0
-Washington,1647,94,0
-California,1518,28,0
-New Jersey,1187,16,0
+New York,16893,119,0
+Washington,1837,95,0
+New Jersey,1693,18,0
+California,1805,35,0
+Illinois,1047,6,0
+Michigan,1038,9,0
+Florida,1006,13,0
 Louisiana,787,20,0
-Michigan,809,8,0
-Florida,762,13,0
-Illinois,750,6,0
-Texas,557,5,0
-Georgia,519,14,0
-Massachusetts,509,2,0
-Colorado,475,6,0
-Pennsylvania,405,2,0
-Tennessee,365,1,0
-North Carolina,283,0,0
-Wisconsin,282,4,0
-Ohio,250,3,0
-Maryland,244,3,0
-Connecticut,223,5,0
-Indiana,129,4,0
-South Carolina,174,3,0
-Virginia,159,3,0
+Texas,663,8,0
+Massachusetts,616,2,0
+Georgia,594,15,0
+Colorado,594,7,0
+Pennsylvania,509,4,0
+Tennessee,475,2,0
+Wisconsin,383,4,0
+Ohio,356,3,0
+Connecticut,327,8,0
+North Carolina,311,0,0
+Maryland,249,3,0
+Virginia,221,6,0
+Mississippi,207,1,0
+Indiana,204,7,0
+South Carolina,196,3,0
 Nevada,154,2,0
-Mississippi,140,1,0
-Oregon,137,4,0
-Minnesota,137,1,0
-Utah,136,0,0
-Alabama,131,0,0
-Arkansas,4,0,0
-Arizona,104,1,0
-District of Columbia,98,1,0
+Utah,181,1,0
+Minnesota,169,1,0
+Arkansas,44,0,0
+Oregon,161,5,0
+Alabama,157,0,0
+Arizona,152,2,0
+Missouri,142,3,0
+District of Columbia,120,2,0
 Kentucky,64,3,0
-Missouri,86,3,0
-Iowa,70,0,0
-Maine,67,0,0
-Rhode Island,54,0,0
-New Hampshire,65,0,0
-Kansas,58,2,0
-New Mexico,57,0,0
-Oklahoma,53,1,0
+Iowa,90,0,0
+Maine,81,0,0
+Rhode Island,75,0,0
+New Hampshire,78,0,0
+Oklahoma,67,2,0
+Kansas,67,2,0
+New Mexico,65,0,0
+Hawaii,56,0,0
+Delaware,56,0,0
+Vermont,52,2,0
 Nebraska,51,0,0
-Vermont,49,2,0
-Hawaii,48,0,0
-Delaware,45,0,0
-Idaho,42,0,0
-Montana,29,0,0
-North Dakota,28,0,0
-Wyoming,24,0,0
+Idaho,51,0,0
+Montana,33,0,0
+North Dakota,30,0,0
+Guam,27,1,0
+Wyoming,26,0,0
 Puerto Rico,23,1,0
-Alaska,21,0,0
-Guam,15,1,0
-South Dakota,14,1,0
-West Virginia,12,0,0
+Alaska,22,0,0
+South Dakota,21,1,0
+West Virginia,16,0,0

@@ -198,7 +198,7 @@ particlesJS.load('particles_background', './config/particles.json', function () 
   }
 
 d3.csv("./data/csbs.csv").get(function(error, data) {
-  d3.tsv("//s3-us-west-2.amazonaws.com/vida-public/geo/us-state-names.tsv").get(function(error, names) {
+  d3.tsv("./data/us-state-names.tsv").get(function(error, names) {
   
   for (var i = 0; i < names.length; i++) {
     name_id_map[names[i].name] = names[i].id;
@@ -210,7 +210,10 @@ d3.csv("./data/csbs.csv").get(function(error, data) {
       d3.min(data, d => { return zap(d) } ), 
       d3.max(data, d => { return zap(d) } ),
     ]);
-  d3.json("https://s3-us-west-2.amazonaws.com/vida-public/geo/us.json").get(function(error, us) {
+  d3.json("./data/us.json").get( (error, usa) => {zahzahzah(error, usa)})});
+});
+
+function zahzahzah(error, us) {
     svg0
       .append("g")
       .attr("class", "choropleth")
@@ -247,11 +250,7 @@ d3.csv("./data/csbs.csv").get(function(error, data) {
         .attr("class", "states")
         .attr("d", path);
        
-  });
-  });
-
-
-});
+  }
 
 function mouseout(){
   d3.select('.selecter')
@@ -261,51 +260,52 @@ function mouseout(){
 }
 
 function mousemove(d) {
-            var html = "";
-            html += "<div class=\"tooltip_kv\">";
-              html += "<h3 class=\"tooltip_key\">";
-              html += id_name_map[d.id];
-              html += "</h3>";
-            html += "<span class=\"confirmed\">";
-            html += "confirmed:";
-              html += "<span class=\"tooltip_value\">";
-              html += confirmedById.get(d.id);
-              html += "</span>";
-            html += "</span>";
-            html += "</br>";
-            html += "<span class=\"deceased\">";
-            html += "deceased:";
-              html += "<span class=\"tooltip_value\">";
-              html += deathsById.get(d.id);
-              html += "</span>";
-            html += "</span>";
-            html += "</br>";
-            html += "<span class=\"recovered\">";
-            html += "recovered:";
-              html += "<span class=\"tooltip_value\">";
-              html += recoveredById.get(d.id);
-              html += "</span>";
-            html += "</span>";
-            html += "</div>";
-            $("#tooltip-container").html(html);
-            d3.select('.selecter').attr("fill-opacity", "0.8");
-            $("#tooltip-container").show();
-            //var coordinates = d3.mouse(p);
-            
-            var map_width = $('.choropleth')[0].getBoundingClientRect().width;
-            
-            if (d3.event.layerX < map_width / 2) {
-              d3.select("#tooltip-container")
-                .style("top", (d3.event.layerY + 15) + "px")
-                .style("left", (d3.event.layerX + 15) + "px");
-                return
-            }
-            var tooltip_width = $("#tooltip-container").width();
-            d3.select("#tooltip-container")
-            .style("top", (d3.event.layerY + 15) + "px")
-            .style("left", (d3.event.layerX - tooltip_width - 30) + "px");
-        }
+  var html = "";
+  html += "<div class=\"tooltip_kv\">";
+    html += "<h3 class=\"tooltip_key\">";
+    html += id_name_map[d.id];
+    html += "</h3>";
+  html += "<span class=\"confirmed\">";
+  html += "confirmed:";
+    html += "<span class=\"tooltip_value\">";
+    html += confirmedById.get(d.id);
+    html += "</span>";
+  html += "</span>";
+  html += "</br>";
+  html += "<span class=\"deceased\">";
+  html += "deceased:";
+    html += "<span class=\"tooltip_value\">";
+    html += deathsById.get(d.id);
+    html += "</span>";
+  html += "</span>";
+  html += "</br>";
+  html += "<span class=\"recovered\">";
+  html += "recovered:";
+    html += "<span class=\"tooltip_value\">";
+    html += recoveredById.get(d.id);
+    html += "</span>";
+  html += "</span>";
+  html += "</div>";
+  $("#tooltip-container").html(html);
+  d3.select('.selecter').attr("fill-opacity", "0.8");
+  $("#tooltip-container").show();
+  //var coordinates = d3.mouse(p);
+  
+  var map_width = $('.choropleth')[0].getBoundingClientRect().width;
+  
+  if (d3.event.layerX < map_width / 2) {
+    d3.select("#tooltip-container")
+      .style("top", (d3.event.layerY + 15) + "px")
+      .style("left", (d3.event.layerX + 15) + "px");
+      return
+  }
+  var tooltip_width = $("#tooltip-container").width();
+  d3.select("#tooltip-container")
+  .style("top", (d3.event.layerY + 15) + "px")
+  .style("left", (d3.event.layerX - tooltip_width - 30) + "px");
+}
 
+//$("svg").css({top: '25%', left: '25%', position:'absolute', border: '5px dotted magenta'});
 
 </script>
 

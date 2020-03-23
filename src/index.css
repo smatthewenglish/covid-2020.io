@@ -44,15 +44,17 @@ html, body {
 /*  position: absolute;
   top: 25%;
   left: 25%;*/
-/*  position: relative;*/
-/*  top: 20%;*/
+  /*position: absolute;*/
+  top: 25%;
   margin-left: 25%;
 } 
 
-/*#map_container {
 
-$("svg").css({top: '25%', left: '25%', position:'absolute', border: '5px dotted magenta'});
+
+/*.svg0 {
+  background-color: orange;
 }*/
+/*$("svg").css({top: '25%', left: '25%', position:'absolute', border: '5px dotted magenta'});*/
 
 .box {
   display: flex;
@@ -170,6 +172,20 @@ $("svg").css({top: '25%', left: '25%', position:'absolute', border: '5px dotted 
   .box .row.footer {
     padding-bottom: 0px;
   }
+
+/* var width = 900;
+  var height = 535;*/
+  .united_states {
+  
+     border: 5px dotted green;
+
+     height: 50%;
+     left: 0px;
+     margin-left: 0px;
+     top: 20%;
+
+} 
+
 }
 
 
