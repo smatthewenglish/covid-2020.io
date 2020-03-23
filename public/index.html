@@ -216,11 +216,12 @@ d3.csv("./data/csbs.csv").get(function(error, data) {
       .attr("class", "choropleth")
       .selectAll("path")
       .data(
-        topojson.feature(
-          us, 
-          us.objects.states
+        topojson
+          .feature(
+            us, 
+            us.objects.states
           )
-        .features
+          .features
       )
       .enter()
       .append("path")
