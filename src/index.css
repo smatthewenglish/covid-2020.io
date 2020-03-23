@@ -39,14 +39,16 @@ html, body {
   float: right;
 }
 
-/*.svg {
+.fuckFuck {
+  border: 5px dotted magenta;
   position: absolute;
   top: 25%;
   left: 25%;
-}*/
+} 
 
 /*#map_container {
-border: 5px dotted magenta;
+
+$("svg").css({top: '25%', left: '25%', position:'absolute', border: '5px dotted magenta'});
 }*/
 
 .box {
