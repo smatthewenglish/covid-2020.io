@@ -233,7 +233,7 @@
     return +d[MAP_CONFIRMED];
   }
 
-  d3.csv("./data/csbs.csv").get(function(error, data) {
+  d3.csv("./data/csbs_3.25.csv").get(function(error, data) {
     d3.tsv("./data/us-state-names.tsv").get(function(error, names) {
       for (var i = 0; i < names.length; i++) {
         name_id_map[names[i].name] = names[i].id;
